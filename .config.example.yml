@@ -1,0 +1,11 @@
+database:
+  host: "localhost"
+  port: 5432
+  password: "password"
+  user: "root"
+
+applications:
+  - id: 297045071457681409
+    token: "a_bot_token"
+    username: "mybot"
+    discriminator: "1234"
