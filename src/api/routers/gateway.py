@@ -8,7 +8,7 @@ router = APIRouter(prefix="/gateway")
 
 @router.get("")
 async def get_gateway() -> GetGateway:
-    return GetGateway(url=f"ws://{CONFIG.host}")
+    return GetGateway(url=f"ws://{CONFIG.host}/ws")
 
 
 @router.get("/bot")
@@ -21,7 +21,7 @@ async def get_gateway_bot() -> GetGatewayBot:
     )
 
     return GetGatewayBot(
-        url=f"ws://{CONFIG.host}",
+        url=f"ws://{CONFIG.host}/ws",
         shards=1,  # TODO: Some sort of sharding logic
         session_start_limit=session_start_limit,
     )
