@@ -1,3 +1,3 @@
 # DiscordEmu
 
-An emulation of the Discord gateway for local testing.
+An emulation of the Discord gateway and API for local testing.
