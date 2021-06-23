@@ -21,7 +21,7 @@ async def get_gateway_bot() -> GetGatewayBot:
     )
 
     return GetGatewayBot(
-        url="ws://{CONFIG.host}",
+        url=f"ws://{CONFIG.host}",
         shards=1,  # TODO: Some sort of sharding logic
         session_start_limit=session_start_limit,
     )
