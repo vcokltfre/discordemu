@@ -14,6 +14,11 @@ class ConfigDatabase:
     port: int = 5432
     password: str = "password"
     user: str = "root"
+    database: str = "discordemu"
+
+    @property
+    def dsn(self) -> str:
+        return f"postgres://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}"
 
 
 @dataclass
