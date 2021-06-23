@@ -33,9 +33,10 @@ class ConfigUser:
 class Config:
     database: ConfigDatabase
     applications: List[ConfigUser]
+    host: str
 
 
 cfg_db = ConfigDatabase(**config["database"])
 cfg_apps = [ConfigUser(**app) for app in config["applications"]]
 
-CONFIG = Config(cfg_db, cfg_apps)
+CONFIG = Config(cfg_db, cfg_apps, config["host"])

@@ -9,3 +9,5 @@ applications:
     token: "a_bot_token"
     username: "mybot"
     discriminator: 1234
+
+host: "localhost:8080"
