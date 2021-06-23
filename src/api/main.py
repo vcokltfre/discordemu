@@ -2,11 +2,13 @@ from asyncpg import Pool, create_pool
 from fastapi import FastAPI
 
 from src.api.routers import router
+from src.api.gateway import router as gateway_router
 from src.config import CONFIG
 
 
 app = FastAPI(openapi_url=None)
 app.include_router(router)
+app.include_router(gateway_router)
 
 pool: Pool
 
