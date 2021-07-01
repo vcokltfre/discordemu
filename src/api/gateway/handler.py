@@ -31,7 +31,9 @@ class WebSocketHandler:
             if op == 1:
                 self.loop.create_task(self.send({"op": 11}))
             elif op == 2:
-                await self.send({"op":0, "t": "READY", "d": {}})  # TODO: Flesh out ready
+                await self.send(
+                    {"op": 0, "t": "READY", "d": {}}
+                )  # TODO: Flesh out ready
 
             # TODO: Implement other ops
 
@@ -39,12 +41,6 @@ class WebSocketHandler:
         await self.ws.accept()
 
         # Hello
-        await self.ws.send_json({
-            "op": 10,
-            "d": {
-                "heartbeat_interval": 45000
-            }
-        })
+        await self.ws.send_json({"op": 10, "d": {"heartbeat_interval": 45000}})
 
         await self._read()
-

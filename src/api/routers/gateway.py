@@ -6,6 +6,7 @@ from src.models.api.gateway import GetGateway, GetGatewayBot, SessionStartLimit
 
 router = APIRouter(prefix="/gateway")
 
+
 @router.get("")
 async def get_gateway() -> GetGateway:
     return GetGateway(url=f"ws://{CONFIG.host}/ws")

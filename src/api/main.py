@@ -20,6 +20,7 @@ async def on_startup() -> None:
     global pool
     pool = await create_pool(dsn=CONFIG.database.dsn)
 
+
 @app.on_event("shutdown")
 async def on_shutdown() -> None:
     """Gracefully shutdown components."""
