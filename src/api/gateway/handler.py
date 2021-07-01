@@ -1,4 +1,4 @@
-from asyncio import TimeoutError, get_running_loop, wait_for
+from asyncio import get_running_loop
 
 from fastapi import WebSocket
 
